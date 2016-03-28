@@ -1,9 +1,11 @@
+(function () {
+
 var EXPECTED_VALUE = 'expected_value' + Math.random();
 
 var app = angular.module('template_click', []);
 app.directive('myDirective', function () {
   // EDITABLE BLOCK START
-  // var attributes = 'ng-click="updateValue()"';
+  var attributes = 'ng-click="updateValue()"';
   // EDITABLE BLOCK END
 
   return {
@@ -11,7 +13,6 @@ app.directive('myDirective', function () {
     replace: false,
     link: function (scope, element, attrs, controller, transcludeFn) {
       scope.updateValue = function () {
-        console.log('dupa');
         scope.value = EXPECTED_VALUE;
       };
     }
@@ -40,3 +41,5 @@ describe("template_click", function() {
     expect(element.find('span').html()).toContain(EXPECTED_VALUE);
   });
 });
+
+})();

@@ -18,26 +18,18 @@ app.directive('myDirective', function () {
 });
 
 describe("template_conditional", function() {
-  var $compile;
-  var $scope;
-
   beforeEach(module('template_conditional'));
-  beforeEach(inject(function (_$compile_, _$rootScope_) {
-    $compile = _$compile_;
-    $scope = _$rootScope_.$new(true);
-  }));
 
-  it("conditionally displays a value", function() {
-    expect(true).toBe(true);
+  it("conditionally displays a value", function(done) {
+    withDirective('<div my-directive></div>', function (element, scope, refreshScope) {
+      expect(element.find('span').html()).toContain(EXPECTED_VALUE);
 
-    var element = $compile('<div my-directive></div>')($scope);
+      scope.hideValue = true;
+      refreshScope();
+      expect(element.find('span').html()).not.toContain(EXPECTED_VALUE);
 
-    $scope.$digest();
-    expect(element.find('span').html()).toContain(EXPECTED_VALUE);
-
-    $scope.hideValue = true;
-    $scope.$digest();
-    expect(element.find('span').html()).not.toContain(EXPECTED_VALUE);
+      done();
+    });
   });
 });
 

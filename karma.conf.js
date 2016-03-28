@@ -17,7 +17,11 @@ module.exports = function(config) {
     files: [
       'node_modules/angular/angular.js',
       'node_modules/angular-mocks/angular-mocks.js',
-      'cases/*.js'
+      'utils/directive_helpers.js',
+      'cases/template_*.js',
+      'cases/module_*.js',
+      'cases/digest_cycle_*.js',
+      'cases/problem_*.js'
     ],
 
 

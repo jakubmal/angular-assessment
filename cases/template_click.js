@@ -20,25 +20,17 @@ app.directive('myDirective', function () {
 });
 
 describe("template_click", function() {
-  var $compile;
-  var $scope;
-
   beforeEach(module('template_click'));
-  beforeEach(inject(function (_$compile_, _$rootScope_) {
-    $compile = _$compile_;
-    $scope = _$rootScope_.$new(true);
-  }));
 
-  it("displays a value after a click", function() {
-    expect(true).toBe(true);
+  it("displays a value after a click", function(done) {
+    withDirective('<div my-directive></div>', function (element) {
+      expect(element.find('span').html()).not.toContain(EXPECTED_VALUE);
 
-    var element = $compile('<div my-directive></div>')($scope);
+      element.find('span').triggerHandler('click');
+      expect(element.find('span').html()).toContain(EXPECTED_VALUE);
 
-    $scope.$digest();
-    expect(element.find('span').html()).not.toContain(EXPECTED_VALUE);
-
-    element.find('span').triggerHandler('click');
-    expect(element.find('span').html()).toContain(EXPECTED_VALUE);
+      done();
+    });
   });
 });
 

@@ -1,0 +1,52 @@
+- change property passed by attribtue to isolate scope
+- watch an array
+- is module included in module visible when parent module included again
+
+- directive restrict
+- directive replace
+- directive transclude
+- directive isolate scope (@, =, &)
+- directives priority
+- directives require
+- directives link vs. compile
+- directives $destroy
+- directives controller, controllerAs
+- directives terminal
+- directives declared twice (http://www.bennadel.com/blog/2936-creating-an-isolate-scope-directive-with-multiple-transclusion-points-in-angularjs.htm)
+- $watch
+- $watchCollection
+- $watchGroup
+- $broadcast, $on, $emit
+- $q
+- ng-class
+- ng-repeat
+- ng-form, $setDirty, etc.
+- input options
+- dynamically apply new directive
+- accessing sibling, parent directives ($compile documentation)
+- accessing parent controller
+- <custom-directive two-way-attribute="::oneWayExpression" />
+- filter
+- memoize filtered collections
+- one-time binding
+- solve digest cycle loop
+- $applyAsync (+ in $http)
+- $http
+- module.run
+- module.value
+- animations
+- $location
+- controllers
+- $provider.decorator
+- Module.decorator (1.4)
+- $exceptionHandler
+- $log
+- http://www.bennadel.com/blog/2962-conditionally-canceling-href-navigation-using-directives-in-angularjs.htm
+- http://www.bennadel.com/blog/2964-formatting-and-parsing-custom-ngmodel-bindings-in-angularjs.htm
+- http://www.bennadel.com/blog/2958-managing-a-shared-global-ui-component-in-angularjs.htm
+- problems: multiple transclusion points (https://www.airpair.com/angularjs/posts/creating-container-components-part-2-angular-1-directives#making-it-reusable)
+- http://www.bennadel.com/blog/2931-css3-transition-properties-are-not-inherited-in-angularjs.htm
+- http://www.bennadel.com/blog/2901-using-scope-watchcollection-to-watch-functions-in-angularjs.htm
+- http://www.bennadel.com/blog/2896-accessing-the-view-model-inside-the-link-function-when-using-controller-as-in-angularjs.htm
+- http://www.bennadel.com/blog/2883-how-the-destroy-event-affects-the-scope-tree-in-angularjs.htm
+- https://docs.angularjs.org/guide/component-router
